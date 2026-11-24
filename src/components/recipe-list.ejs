@@ -1,0 +1,7 @@
+<ul class="recipe-list">
+    <% for (let index = 0; index < count; index += 1) { %>
+    <li class="recipe-list__item">
+        <%- include('recipe-card.ejs', { recipe, cardId: listId + '-' + index }) %>
+    </li>
+    <% } %>
+</ul>

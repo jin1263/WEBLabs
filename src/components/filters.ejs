@@ -1,0 +1,18 @@
+<aside class="filters" aria-labelledby="filters-title">
+    <h2 class="filters__title" id="filters-title" data-i18n="filters.title"><%= t.filters.title %></h2>
+    <form class="filters__form" action="<%= filterPage %>.html" method="get">
+        <% filterGroups.forEach((group) => { %>
+        <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="filters.<%= group.key %>"><%= t.filters[group.key] %></legend>
+            <% group.options.forEach((option) => { %>
+            <p class="filters__option">
+                <input class="filters__checkbox" type="checkbox" id="<%= filterPage %>-<%= group.key %>-<%= option %>" name="<%= group.key %>[]" value="<%= option %>">
+                <label class="filters__label" for="<%= filterPage %>-<%= group.key %>-<%= option %>" data-i18n="tags.<%= option %>"><%= t.tags[option] %></label>
+            </p>
+            <% }); %>
+        </fieldset>
+        <% }); %>
+        <button class="filters__button" type="submit" data-i18n="filters.apply"><%= t.filters.apply %></button>
+        <button class="filters__button" type="reset" data-i18n="filters.reset"><%= t.filters.reset %></button>
+    </form>
+</aside>

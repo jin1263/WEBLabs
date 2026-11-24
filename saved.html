@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= t.meta.saved.description %>" data-i18n-content="meta.saved.description">
+    <title data-i18n="meta.saved.title"><%= t.meta.saved.title %></title>
+
+</head>
+<body>
+    <%- include('src/components/header.ejs', { activePage: 'saved' }) %>
+    <main class="saved" id="main-content" tabindex="-1">
+        <header class="saved__intro">
+            <h1 class="saved__title" data-i18n="saved.title"><%= t.saved.title %></h1>
+            <p class="saved__description" data-i18n="saved.intro"><%= t.saved.intro %></p>
+        </header>
+        <%- include('src/components/filters.ejs', { filterPage: 'saved' }) %>
+        <section class="saved__results" aria-labelledby="saved-title">
+            <h2 class="saved__subtitle" id="saved-title" data-i18n="saved.results"><%= t.saved.results %></h2>
+            <%- include('src/components/recipe-list.ejs', { listId: 'saved', count: 12 }) %>
+            <details class="more-recipes">
+                <summary class="more-recipes__summary" data-i18n="common.seeMore"><%= t.common.seeMore %></summary>
+                <%- include('src/components/recipe-list.ejs', { listId: 'more-saved', count: 4 }) %>
+            </details>
+        </section>
+    </main>
+    <%- include('src/components/footer.ejs') %>
+</body>
+</html>

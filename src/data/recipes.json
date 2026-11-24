@@ -1,0 +1,142 @@
+{
+  "recipe": {
+    "id": 1,
+    "title": "Creamy Chicken Pasta",
+    "href": "recipe.html",
+    "image": "src/assets/img/pasta",
+    "imageSource": "https://images.unsplash.com/photo-1473093226795-af9932fe5856",
+    "tags": [
+      "mainDishes",
+      "quickRecipes"
+    ],
+    "description": "A quick and comforting pasta dish with tender chicken, creamy sauce, and Parmesan cheese. Perfect for an easy lunch or dinner.",
+    "prepTime": "PT10M",
+    "cookTime": "PT25M",
+    "totalTime": "PT35M",
+    "servings": 2,
+    "ingredients": [
+      {
+        "key": "pasta",
+        "name": "Pasta",
+        "amount": "200 g"
+      },
+      {
+        "key": "chicken",
+        "name": "Chicken breast",
+        "amount": "250 g"
+      },
+      {
+        "key": "cream",
+        "name": "Cooking cream",
+        "amount": "150 ml"
+      },
+      {
+        "key": "parmesan",
+        "name": "Parmesan cheese",
+        "amount": "50 g"
+      },
+      {
+        "key": "garlic",
+        "name": "Garlic",
+        "amount": "2 cloves"
+      },
+      {
+        "key": "oil",
+        "name": "Olive oil",
+        "amount": "1 tbsp"
+      },
+      {
+        "key": "seasoning",
+        "name": "Salt and black pepper",
+        "amount": "To taste"
+      },
+      {
+        "key": "parsley",
+        "name": "Fresh parsley",
+        "amount": "To serve"
+      }
+    ],
+    "steps": [
+      {
+        "key": "pasta",
+        "title": "Cook the pasta",
+        "text": "Cook the pasta in salted boiling water following the package instructions. Reserve a small cup of the cooking water, then drain."
+      },
+      {
+        "key": "chicken",
+        "title": "Prepare the chicken",
+        "text": "Cut the chicken into bite-sized pieces. Heat the olive oil in a pan and cook the chicken until cooked through. Add the garlic and stir until fragrant."
+      },
+      {
+        "key": "sauce",
+        "title": "Make the sauce",
+        "text": "Lower the heat, add the cream, and stir in the Parmesan. Add a little reserved pasta water if the sauce is too thick."
+      },
+      {
+        "key": "serve",
+        "title": "Combine and serve",
+        "text": "Add the pasta to the pan and stir to coat. Season with salt and black pepper, then serve with fresh parsley."
+      }
+    ]
+  },
+  "filterGroups": [
+    {
+      "key": "meal",
+      "options": [
+        "breakfast",
+        "snacks",
+        "mainDishes",
+        "soups",
+        "drinks",
+        "desserts",
+        "salads"
+      ]
+    },
+    {
+      "key": "lifestyle",
+      "options": [
+        "healthy",
+        "vegetarian",
+        "vegan",
+        "lowCalorie",
+        "highProtein"
+      ]
+    },
+    {
+      "key": "convenience",
+      "options": [
+        "quickRecipes",
+        "budgetMeals",
+        "easyRecipes",
+        "onePotMeals",
+        "baking"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "key": "alex",
+      "name": "Alex",
+      "rating": 5,
+      "date": "2026-11-10",
+      "dateLabel": "November 10, 2026",
+      "text": "Easy to follow and perfect for a weekday dinner."
+    },
+    {
+      "key": "sam",
+      "name": "Sam",
+      "rating": 4,
+      "date": "2026-11-11",
+      "dateLabel": "November 11, 2026",
+      "text": "I added mushrooms and a little extra Parmesan."
+    },
+    {
+      "key": "jamie",
+      "name": "Jamie",
+      "rating": 5,
+      "date": "2026-11-12",
+      "dateLabel": "November 12, 2026",
+      "text": "The pasta water tip made the sauce really smooth."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= t.meta.cookbook.description %>" data-i18n-content="meta.cookbook.description">
+    <title data-i18n="meta.cookbook.title"><%= t.meta.cookbook.title %></title>
+
+</head>
+<body>
+    <%- include('src/components/header.ejs', { activePage: 'cookbook' }) %>
+    <main class="cookbook" id="main-content" tabindex="-1">
+        <header class="cookbook__intro">
+            <h1 class="cookbook__title" data-i18n="cookbook.title"><%= t.cookbook.title %></h1>
+            <p class="cookbook__description" data-i18n="cookbook.intro"><%= t.cookbook.intro %></p>
+            <%- include('src/components/search.ejs', { searchId: 'catalog-search' }) %>
+        </header>
+        <%- include('src/components/filters.ejs', { filterPage: 'cookbook' }) %>
+        <section class="cookbook__results" aria-labelledby="results-title">
+            <h2 class="cookbook__subtitle" id="results-title" data-i18n="cookbook.results"><%= t.cookbook.results %></h2>
+            <%- include('src/components/recipe-list.ejs', { listId: 'results', count: 8 }) %>
+            <details class="more-recipes">
+                <summary class="more-recipes__summary" data-i18n="common.seeMore"><%= t.common.seeMore %></summary>
+                <%- include('src/components/recipe-list.ejs', { listId: 'more-results', count: 4 }) %>
+            </details>
+        </section>
+    </main>
+    <%- include('src/components/footer.ejs') %>
+</body>
+</html>

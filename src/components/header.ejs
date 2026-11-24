@@ -1,0 +1,11 @@
+<a class="skip-link" href="#main-content" data-i18n="navigation.skip"><%= t.navigation.skip %></a>
+<header class="header">
+    <a class="header__logo" href="index.html">Cookly</a>
+    <nav class="nav" aria-label="<%= t.navigation.label %>" data-i18n-aria-label="navigation.label">
+        <ul class="nav__list">
+            <li><a class="nav__link" href="index.html" aria-current="<%= activePage === 'home' ? 'page' : 'false' %>" data-i18n="navigation.home"><%= t.navigation.home %></a></li>
+            <li><a class="nav__link" href="cookbook.html" aria-current="<%= activePage === 'cookbook' ? 'page' : 'false' %>" data-i18n="navigation.cookbook"><%= t.navigation.cookbook %></a></li>
+            <li><a class="nav__link" href="saved.html" aria-current="<%= activePage === 'saved' ? 'page' : 'false' %>" data-i18n="navigation.saved"><%= t.navigation.saved %></a></li>
+        </ul>
+    </nav>
+</header>

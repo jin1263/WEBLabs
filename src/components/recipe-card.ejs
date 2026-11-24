@@ -1,0 +1,10 @@
+<article class="recipe-card" aria-labelledby="<%= cardId %>-title">
+    <%- include('responsive-image.ejs', { image: recipe.image, alt: '', altKey: null, eager: false }) %>
+    <h3 class="recipe-card__title" id="<%= cardId %>-title" data-i18n="recipe.title"><%= recipe.title %></h3>
+    <ul class="recipe-card__tags">
+        <% recipe.tags.forEach((tag) => { %>
+        <li class="recipe-card__tag" data-i18n="tags.<%= tag %>"><%= t.tags[tag] %></li>
+        <% }); %>
+    </ul>
+    <a class="recipe-card__link" href="<%= recipe.href %>" aria-describedby="<%= cardId %>-title" data-i18n="common.readMore"><%= t.common.readMore %></a>
+</article>

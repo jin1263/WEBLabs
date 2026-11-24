@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= t.meta.recipe.description %>" data-i18n-content="meta.recipe.description">
+    <title data-i18n="meta.recipe.title"><%= t.meta.recipe.title %></title>
+    <%
+        const recipeSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'Recipe',
+            name: recipe.title,
+            description: recipe.description,
+            image: recipe.imageSource,
+            author: { '@type': 'Organization', name: 'Cookly' },
+            prepTime: recipe.prepTime,
+            cookTime: recipe.cookTime,
+            totalTime: recipe.totalTime,
+            recipeYield: recipe.servings + ' servings',
+            recipeIngredient: recipe.ingredients.map((item) => item.amount + ' ' + item.name),
+            recipeInstructions: recipe.steps.map((step) => ({
+                '@type': 'HowToStep', name: step.title, text: step.text
+            }))
+        };
+    %>
+    <script type="application/ld+json"><%- JSON.stringify(recipeSchema).replaceAll('<', '\\u003c') %></script>
+</head>
+<body>
+    <%- include('src/components/header.ejs', { activePage: 'recipe' }) %>
+    <main class="recipe" id="main-content" tabindex="-1">
+        <div class="recipe__layout">
+            <article class="recipe-details" aria-labelledby="recipe-title">
+                <header class="recipe-details__header">
+                    <figure class="recipe-details__photo">
+                        <%- include('src/components/responsive-image.ejs', { image: recipe.image, alt: t.recipe.photoAlt, altKey: 'recipe.photoAlt', eager: true }) %>
+                        <figcaption class="recipe-details__caption" data-i18n="recipe.photoCaption"><%= t.recipe.photoCaption %></figcaption>
+                    </figure>
+                    <h1 class="recipe-details__title" id="recipe-title" data-i18n="recipe.title"><%= recipe.title %></h1>
+                    <p class="recipe-details__description" data-i18n="recipe.description"><%= recipe.description %></p>
+                    <dl class="recipe-details__facts">
+                        <dt data-i18n="recipe.prepTime"><%= t.recipe.prepTime %></dt>
+                        <dd><time datetime="<%= recipe.prepTime %>" data-i18n="recipe.prepDuration"><%= t.recipe.prepDuration %></time></dd>
+                        <dt data-i18n="recipe.cookTime"><%= t.recipe.cookTime %></dt>
+                        <dd><time datetime="<%= recipe.cookTime %>" data-i18n="recipe.cookDuration"><%= t.recipe.cookDuration %></time></dd>
+                        <dt data-i18n="recipe.totalTime"><%= t.recipe.totalTime %></dt>
+                        <dd><time datetime="<%= recipe.totalTime %>" data-i18n="recipe.totalDuration"><%= t.recipe.totalDuration %></time></dd>
+                        <dt data-i18n="recipe.servings"><%= t.recipe.servings %></dt><dd><%= recipe.servings %></dd>
+                        <dt data-i18n="recipe.difficulty"><%= t.recipe.difficulty %></dt><dd data-i18n="recipe.easy"><%= t.recipe.easy %></dd>
+                    </dl>
+                </header>
+                <section class="recipe-details__ingredients" aria-labelledby="ingredients-title">
+                    <h2 id="ingredients-title" data-i18n="recipe.ingredientsTitle"><%= t.recipe.ingredientsTitle %></h2>
+                    <table class="ingredients">
+                        <caption class="ingredients__caption" data-i18n="recipe.ingredientsCaption"><%= t.recipe.ingredientsCaption %></caption>
+                        <thead><tr><th scope="col" data-i18n="recipe.ingredient"><%= t.recipe.ingredient %></th><th scope="col" data-i18n="recipe.amount"><%= t.recipe.amount %></th></tr></thead>
+                        <tbody>
+                            <% recipe.ingredients.forEach((item) => { %>
+                            <tr><th scope="row" data-i18n="recipe.ingredients.<%= item.key %>.name"><%= item.name %></th><td data-i18n="recipe.ingredients.<%= item.key %>.amount"><%= item.amount %></td></tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="recipe-details__instructions" aria-labelledby="instructions-title">
+                    <h2 id="instructions-title" data-i18n="recipe.instructions"><%= t.recipe.instructions %></h2>
+                    <ol class="recipe-details__steps">
+                        <% recipe.steps.forEach((step) => { %>
+                        <li class="recipe-details__step">
+                            <h3 data-i18n="recipe.steps.<%= step.key %>.title"><%= step.title %></h3>
+                            <p data-i18n="recipe.steps.<%= step.key %>.text"><%= step.text %></p>
+                        </li>
+                        <% }); %>
+                    </ol>
+                </section>
+                <aside class="recipe-details__tips" aria-labelledby="tips-title">
+                    <h2 id="tips-title" data-i18n="recipe.tips"><%= t.recipe.tips %></h2>
+                    <p data-i18n="recipe.tipsText"><%= t.recipe.tipsText %></p>
+                </aside>
+            </article>
+            <aside class="recipe-sidebar" aria-label="<%= t.recipe.moreAbout %>" data-i18n-aria-label="recipe.moreAbout">
+                <section class="recipe-sidebar__tags" aria-labelledby="tags-title">
+                    <h2 id="tags-title" data-i18n="recipe.tags"><%= t.recipe.tags %></h2>
+                    <ul class="recipe-sidebar__tag-list">
+                        <% recipe.tags.forEach((tag) => { %>
+                        <li><a href="cookbook.html" data-i18n="tags.<%= tag %>"><%= t.tags[tag] %></a></li>
+                        <% }); %>
+                    </ul>
+                </section>
+                <section class="gallery" aria-labelledby="gallery-title">
+                    <h2 id="gallery-title" data-i18n="recipe.gallery"><%= t.recipe.gallery %></h2>
+                    <figure class="gallery__item">
+                        <%- include('src/components/responsive-image.ejs', { image: recipe.image, alt: t.recipe.photoAlt, altKey: 'recipe.photoAlt', eager: false }) %>
+                        <figcaption class="gallery__caption" data-i18n="recipe.galleryPasta"><%= t.recipe.galleryPasta %></figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <%- include('src/components/responsive-image.ejs', { image: 'src/assets/img/salad', alt: t.recipe.saladAlt, altKey: 'recipe.saladAlt', eager: false }) %>
+                        <figcaption class="gallery__caption" data-i18n="recipe.gallerySalad"><%= t.recipe.gallerySalad %></figcaption>
+                    </figure>
+                </section>
+            </aside>
+        </div>
+        <section class="reviews" aria-labelledby="reviews-title">
+            <h2 class="reviews__title" id="reviews-title" data-i18n="reviews.title"><%= t.reviews.title %></h2>
+            <ul class="reviews__list">
+                <% reviews.forEach((review) => { %>
+                <li class="reviews__item">
+                    <article class="review" aria-labelledby="review-<%= review.key %>-title">
+                        <header class="review__header">
+                            <h3 class="review__author" id="review-<%= review.key %>-title"><%= review.name %></h3>
+                            <p class="review__rating"><span data-i18n="reviews.rating"><%= t.reviews.rating %></span> <%= review.rating %> <span data-i18n="reviews.outOf"><%= t.reviews.outOf %></span></p>
+                            <time class="review__date" datetime="<%= review.date %>" data-i18n="reviews.items.<%= review.key %>.date"><%= review.dateLabel %></time>
+                        </header>
+                        <p class="review__text" data-i18n="reviews.items.<%= review.key %>.text"><%= review.text %></p>
+                    </article>
+                </li>
+                <% }); %>
+            </ul>
+        </section>
+    </main>
+    <%- include('src/components/footer.ejs') %>
+</body>
+</html>

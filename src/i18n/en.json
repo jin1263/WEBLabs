@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "home": {
+      "title": "Home | Cookly",
+      "description": "Discover simple and delicious recipes for every day."
+    },
+    "cookbook": {
+      "title": "CookBook | Cookly",
+      "description": "Browse recipes and explore meal types, lifestyles, and cooking ideas."
+    },
+    "recipe": {
+      "title": "Creamy Chicken Pasta | Cookly",
+      "description": "Ingredients and step-by-step instructions for creamy chicken pasta."
+    },
+    "saved": {
+      "title": "Saved recipes | Cookly",
+      "description": "Keep your favorite dishes together in your Cookly collection."
+    }
+  },
+  "navigation": {
+    "label": "Main navigation",
+    "skip": "Skip to content",
+    "home": "Home",
+    "cookbook": "CookBook",
+    "saved": "Saved"
+  },
+  "footer": {
+    "text": "Cookly - simple recipes for every day."
+  },
+  "home": {
+    "title": "Find your next favorite recipe",
+    "intro": "Discover simple and delicious recipes for every day.",
+    "discover": "Discover recipes",
+    "searchTitle": "Already know what you want?",
+    "searchIntro": "Find exactly what you are looking for.",
+    "popular": "Popular recipes",
+    "recent": "Recently viewed"
+  },
+  "search": {
+    "form": "Search recipes",
+    "label": "Recipe name, ingredient, or category",
+    "placeholder": "Enter a recipe or ingredient",
+    "hint": "Enter at least two characters, or leave blank to browse all recipes.",
+    "find": "Find"
+  },
+  "filters": {
+    "title": "Filters",
+    "meal": "By meal type",
+    "lifestyle": "By lifestyle",
+    "convenience": "By convenience",
+    "apply": "Apply filters",
+    "reset": "Reset filters"
+  },
+  "tags": {
+    "breakfast": "Breakfast",
+    "snacks": "Snacks",
+    "mainDishes": "Main dishes",
+    "soups": "Soups",
+    "drinks": "Drinks",
+    "desserts": "Desserts",
+    "salads": "Salads",
+    "healthy": "Healthy",
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "lowCalorie": "Low-calorie",
+    "highProtein": "High-protein",
+    "quickRecipes": "Quick recipes",
+    "budgetMeals": "Budget meals",
+    "easyRecipes": "Easy recipes",
+    "onePotMeals": "One-pot meals",
+    "baking": "Baking"
+  },
+  "cookbook": {
+    "title": "What would you like to cook?",
+    "intro": "Search by name, ingredient, or category.",
+    "results": "Your finds"
+  },
+  "saved": {
+    "title": "Saved recipes",
+    "intro": "Keep your favorite dishes close and come back to them anytime.",
+    "results": "Recipes"
+  },
+  "common": {
+    "readMore": "Read more",
+    "seeMore": "See more recipes"
+  },
+  "recipe": {
+    "title": "Creamy Chicken Pasta",
+    "description": "A quick and comforting pasta dish with tender chicken, creamy sauce, and Parmesan cheese. Perfect for an easy lunch or dinner.",
+    "photoAlt": "Pasta with mushrooms and fresh herbs, shown as serving inspiration.",
+    "photoCaption": "Serving inspiration.",
+    "prepTime": "Preparation time",
+    "cookTime": "Cooking time",
+    "totalTime": "Total time",
+    "prepDuration": "10 minutes",
+    "cookDuration": "25 minutes",
+    "totalDuration": "35 minutes",
+    "servings": "Servings",
+    "difficulty": "Difficulty",
+    "easy": "Easy",
+    "ingredientsTitle": "Ingredients",
+    "ingredientsCaption": "Ingredients for two servings",
+    "ingredient": "Ingredient",
+    "amount": "Amount",
+    "ingredients": {
+      "pasta": {
+        "name": "Pasta",
+        "amount": "200 g"
+      },
+      "chicken": {
+        "name": "Chicken breast",
+        "amount": "250 g"
+      },
+      "cream": {
+        "name": "Cooking cream",
+        "amount": "150 ml"
+      },
+      "parmesan": {
+        "name": "Parmesan cheese",
+        "amount": "50 g"
+      },
+      "garlic": {
+        "name": "Garlic",
+        "amount": "2 cloves"
+      },
+      "oil": {
+        "name": "Olive oil",
+        "amount": "1 tbsp"
+      },
+      "seasoning": {
+        "name": "Salt and black pepper",
+        "amount": "To taste"
+      },
+      "parsley": {
+        "name": "Fresh parsley",
+        "amount": "To serve"
+      }
+    },
+    "instructions": "Instructions",
+    "steps": {
+      "pasta": {
+        "title": "Cook the pasta",
+        "text": "Cook the pasta in salted boiling water following the package instructions. Reserve a small cup of the cooking water, then drain."
+      },
+      "chicken": {
+        "title": "Prepare the chicken",
+        "text": "Cut the chicken into bite-sized pieces. Heat the olive oil in a pan and cook the chicken until cooked through. Add the garlic and stir until fragrant."
+      },
+      "sauce": {
+        "title": "Make the sauce",
+        "text": "Lower the heat, add the cream, and stir in the Parmesan. Add a little reserved pasta water if the sauce is too thick."
+      },
+      "serve": {
+        "title": "Combine and serve",
+        "text": "Add the pasta to the pan and stir to coat. Season with salt and black pepper, then serve with fresh parsley."
+      }
+    },
+    "tips": "Tips",
+    "tipsText": "For a richer flavor, add mushrooms or spinach. Reserve some pasta water to adjust the sauce.",
+    "moreAbout": "More about this recipe",
+    "tags": "Tags",
+    "gallery": "Gallery",
+    "galleryPasta": "Pasta serving inspiration.",
+    "gallerySalad": "Serve with a fresh salad.",
+    "saladAlt": "A colorful salad with avocado and fresh vegetables."
+  },
+  "reviews": {
+    "title": "Reviews",
+    "rating": "Rating:",
+    "outOf": "out of 5",
+    "items": {
+      "alex": {
+        "date": "November 10, 2026",
+        "text": "Easy to follow and perfect for a weekday dinner."
+      },
+      "sam": {
+        "date": "November 11, 2026",
+        "text": "I added mushrooms and a little extra Parmesan."
+      },
+      "jamie": {
+        "date": "November 12, 2026",
+        "text": "The pasta water tip made the sauce really smooth."
+      }
+    }
+  }
+}
